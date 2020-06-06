@@ -20,8 +20,8 @@ jobs:
       with:
         java-version: '8'
 
-    - name: Build with Maven
-      run: mvn clean install
+#    - name: Build with Maven
+#      run: mvn clean install
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
@@ -29,4 +29,4 @@ jobs:
         app-name: 'app1wk'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_db0b204a8ff9476994b641aef4a96a80 }}
-        package: '${{ github.workspace }}/target/*.jar'
+        package: '${{ github.workspace }}/src/com/houarizegai/calculator/Calculator.java'
